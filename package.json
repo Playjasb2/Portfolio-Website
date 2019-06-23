@@ -2,7 +2,7 @@
   "name": "react_site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.jasmeetbrar.com/Portfolio-Website/",
+  "homepage": "https://www.jasmeetbrar.com/",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "react": "^16.8.6",
