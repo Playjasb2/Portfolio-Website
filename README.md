@@ -1,68 +1,88 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">
+<img alt="Gatsby Blog and CV starter" src="https://dospolov.com/media/gatsby-starter-blog-and-cv.png">
+    Gatsby Blog and CV starter
+</h1>
 
-## Available Scripts
+<p>
+    Inspired by <a href="https://github.com/alxshelepenok/gatsby-starter-lumen">gatsby-starter-lumen</a>
+</p>
 
-In the project directory, you can run:
+Demo: https://dospolov.com/
 
-### `npm start`
+## 🚀 Quick start
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1.  **Create a Gatsby site.**
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+    Use the Gatsby CLI to create a new site, specifying the Blog and CV starter.
 
-### `npm test`
+    ```shell
+    # create a new Gatsby site using the Blog and CV starter
+    gatsby new my-blog-and-cv https://github.com/dospolov/gatsby-starter-blog-and-cv
+    ```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1.  **Start developing.**
 
-### `npm run build`
+    Navigate into your new site’s directory and start it up.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    ```shell
+    cd my-blog-and-cv/
+    gatsby develop
+    ```
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+1.  **Open the source code and start editing!**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    Your site is now running at `http://localhost:8000`!
 
-### `npm run eject`
+    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+    Open the `my-blog-and-cv` directory in your code editor of choice and edit `content/posts/*`. Save your changes and the browser will update in real time!
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🧐 What's inside?
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+A quick look at the top-level files and directories you'll see in a Gatsby project.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    .
+    ├── node_modules
+    ├── src
+    ├── .gitignore
+    ├── .prettierrc
+    ├── gatsby-browser.js
+    ├── gatsby-config.js
+    ├── gatsby-node.js
+    ├── yarn.lock
+    ├── package.json
+    └── README.md
 
-## Learn More
+1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
-### Code Splitting
+4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
 
-### Analyzing the Bundle Size
+6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
 
-### Making a Progressive Web App
+8.  **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+9.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project. We recommend using `yarn`.
 
-### Advanced Configuration
+10. **`README.md`**: A text file containing useful reference information about your project.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+## 🎓 Learning Gatsby
 
-### Deployment
+Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
 
-### `npm run build` fails to minify
+- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## 💫 Deploy
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/dospolov/gatsby-starter-blog-and-cv)
+
+[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/dospolov/gatsby-starter-blog-and-cv)

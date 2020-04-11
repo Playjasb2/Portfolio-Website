@@ -1,43 +1,92 @@
 {
-  "name": "react_site",
-  "version": "0.1.0",
-  "private": true,
-  "homepage": "https://www.jasmeetbrar.com/",
-  "dependencies": {
-    "gh-pages": "^2.0.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
-  },
+  "version": "1.0.1",
+  "name": "gatsby-starter-blog-and-cv",
+  "description": "Gatsby starter for Blog and CV",
+  "main": "n/a",
+  "private": false,
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "eject": "react-scripts eject"
+    "develop": "yarn run clean && gatsby develop",
+    "build": "yarn run clean && gatsby build",
+    "clean": "rimraf .cache public",
+    "release": "standard-version"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "repository": "https://github.com/dospolov/gatsby-starter-blog-and-cv",
+  "author": "Marat Dospolov <marat.dospolov@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "graphql",
+    "netlify",
+    "netlify-cms",
+    "pagination",
+    "ant-design",
+    "tailwind",
+    "categories",
+    "tags",
+    "static",
+    "lost",
+    "blog",
+    "minimal",
+    "react",
+    "theme",
+    "starter",
+    "disqus"
+  ],
+  "dependencies": {
+    "@ant-design/icons": "^4.0.6",
+    "antd": "^4.1.2",
+    "dayjs": "^1.8.24",
+    "gatsby": "^2.20.16",
+    "gatsby-link": "^2.3.2",
+    "gatsby-plugin-catch-links": "^2.2.1",
+    "gatsby-plugin-feed": "^2.4.1",
+    "gatsby-plugin-google-gtag": "^2.0.0",
+    "gatsby-plugin-manifest": "^2.3.3",
+    "gatsby-plugin-netlify": "^2.2.1",
+    "gatsby-plugin-netlify-cms": "^4.2.2",
+    "gatsby-plugin-offline": "^3.1.2",
+    "gatsby-plugin-postcss": "^2.2.1",
+    "gatsby-plugin-react-helmet": "^3.2.1",
+    "gatsby-plugin-sharp": "^2.5.4",
+    "gatsby-plugin-sitemap": "^2.3.1",
+    "gatsby-remark-autolink-headers": "^2.2.1",
+    "gatsby-remark-copy-linked-files": "^2.2.1",
+    "gatsby-remark-images": "^3.2.2",
+    "gatsby-remark-relative-images": "^0.3.0",
+    "gatsby-remark-responsive-iframe": "^2.3.1",
+    "gatsby-remark-smartypants": "^2.2.1",
+    "gatsby-remark-video": "^1.2.5",
+    "gatsby-source-filesystem": "^2.2.2",
+    "gatsby-transformer-remark": "^2.7.1",
+    "gatsby-transformer-sharp": "^2.4.4",
+    "netlify-cms-app": "^2.12.6",
+    "prismjs": "^1.20.0",
+    "react": "^16.13.1",
+    "react-disqus-comments": "^1.4.0",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^6.0.0",
+    "reading-time": "^1.2.0"
   },
-  "lint-staged": {
-    "src/**/*.{js,jsx}": ["eslint --fix", "git add"]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@babel/core": "7.9.0",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/plugin-proposal-optional-chaining": "7.9.0",
+    "@babel/preset-env": "7.9.5",
+    "@babel/preset-react": "7.9.4",
+    "@hot-loader/react-dom": "^16.13.0",
+    "autoprefixer": "9.7.6",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-plugin-import": "^1.13.0",
+    "babel-preset-gatsby": "0.3.1",
+    "concurrently": "5.1.0",
+    "eslint": "6.8.0",
+    "prettier": "^2.0.4",
+    "rimraf": "3.0.2",
+    "slate": "^0.57.1",
+    "standard-version": "7.1.0",
+    "tailwindcss": "^1.2.0"
   }
 }
