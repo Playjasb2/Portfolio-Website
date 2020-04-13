@@ -1,14 +1,14 @@
 module.exports = {
-  url: 'https://dospolov.com',
+  url: 'https://www.jasmeetbrar.com',
   pathPrefix: '/',
-  title: 'Blog by Marat Dospolov',
+  title: 'Blog by Jasmeet Brar',
   keywords:
-    'account surfer, trello bookmark, trello, productivity, javascript, Marat Dospolov, choosy windows, browser selector',
+    'productivity, javascript, C, C++, Jasmeet Brar, compiler, web developer, systems developer',
   subtitle: 'Developer. Optimizer. Learner.',
-  copyright: '© 2020 | Kyiv, Ukraine',
-  disqusShortname: 'dospolov',
+  copyright: '© 2020 | Toronto, Canada',
+  disqusShortname: '',
   postsPerPage: 20,
-  googleAnalyticsId: 'UA-6589522-7',
+  googleAnalyticsId: '',
   menu: [
     {
       label: 'Blog',
@@ -20,15 +20,13 @@ module.exports = {
     }
   ],
   author: {
-    name: 'Marat Dospolov',
+    name: 'Jasmeet Brar',
     photo: '/photo.jpg',
     bio: 'Developer. Optimizer. Learner.',
     contacts: {
-      github: 'dospolov',
-      twitter: 'marat_dospolov',
-      telegram: 'dospolov',
-      facebook: 'dospolov',
-      rss: '/rss.xml'
+      github: 'Playjasb2',
+      email: 'jasmeet.work@outlook.com',
+      linkedin: 'https://www.linkedin.com/in/jasmeetbrar/'
     }
   }
 }

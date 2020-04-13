@@ -1,16 +1,15 @@
 ---
 template: post
-title: Fix Chrome scroll flickering
-slug: /posts/fix-chrome-scroll-flickering
+title: Blog coming soon
+slug: /posts/blog-coming-soon
 draft: false
-priority: 0
-date: 2020-02-08T22:22:02.039Z
+priority: 10
+date: 2020-04-12T22:22:02.039Z
 description: |-
-  If you faced with scrolling issues in Chrome - disable this flag 
-  ```chrome://flags/#disable-threaded-scrolling```
-category: productivity
+  Blog coming soon
+category: blog
 tags:
-  - chrome
+  - blog
 ---
 
-If you faced with scrolling issues in Chrome - disable this flag `chrome://flags/#disable-threaded-scrolling`
+Blog coming soon
