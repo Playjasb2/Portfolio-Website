@@ -8,7 +8,7 @@ module.exports = {
   copyright: '© 2020 | Toronto, Canada',
   disqusShortname: '',
   postsPerPage: 20,
-  googleAnalyticsId: '',
+  googleAnalyticsId: 'UA-36081506-3',
   menu: [
     {
       label: 'Blog',
