@@ -14,6 +14,7 @@ const useSiteMetadata = () => {
                 github
                 linkedin
                 email
+                rss
               }
             }
             menu {

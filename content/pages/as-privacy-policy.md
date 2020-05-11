@@ -124,4 +124,4 @@ Contact Us
 
 If you have any questions about this Privacy Policy, please contact us:
 
-By email: dospolov@live.ru
+By email: jasmeet.work@outlook.com

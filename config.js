@@ -26,7 +26,8 @@ module.exports = {
     contacts: {
       github: 'Playjasb2',
       email: 'jasmeet.work@outlook.com',
-      linkedin: 'https://www.linkedin.com/in/jasmeetbrar/'
+      linkedin: 'https://www.linkedin.com/in/jasmeetbrar/',
+      rss: '/rss.xml'
     }
   }
 }
