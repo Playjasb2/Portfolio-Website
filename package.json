@@ -5,8 +5,8 @@
   "main": "n/a",
   "private": false,
   "scripts": {
-    "develop": "yarn run clean && gatsby develop",
-    "build": "yarn run clean && gatsby build",
+    "develop": "npm run clean && gatsby develop",
+    "build": "npm run clean && GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "clean": "rimraf .cache public",
     "release": "standard-version"
   },
@@ -32,7 +32,7 @@
     "@ant-design/icons": "^4.0.6",
     "antd": "^4.1.2",
     "dayjs": "^1.8.24",
-    "gatsby": "^2.20.16",
+    "gatsby": "^2.21.33",
     "gatsby-link": "^2.3.2",
     "gatsby-plugin-catch-links": "^2.2.1",
     "gatsby-plugin-feed": "^2.4.1",
