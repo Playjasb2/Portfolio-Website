@@ -12,4 +12,4 @@ tags:
   - blog
 ---
 
-Blog coming soon
+Blog coming soon.
