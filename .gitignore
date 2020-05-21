@@ -11,6 +11,10 @@
 # production
 /build
 
+# Gatsby cache and public folder
+.cache
+public
+
 # misc
 .DS_Store
 .env.local
