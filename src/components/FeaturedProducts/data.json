@@ -1,14 +1,14 @@
 [
   {
-    "name": "Blog coming soon",
+    "name": "First blog post",
     "logo": "/logos/as.svg",
-    "description": "Blog coming soon",
-    "link": "/posts/blog-coming-soon"
+    "description": "First blog post",
+    "link": "/posts/first-blog-post"
   },
   {
-    "name": "Blog coming soon",
+    "name": "First blog post",
     "logo": "/logos/as.svg",
-    "description": "Blog coming soon",
-    "link": "/posts/blog-coming-soon"
+    "description": "First blog post",
+    "link": "/posts/first-blog-post"
   }
 ]

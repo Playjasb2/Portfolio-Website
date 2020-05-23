@@ -6,7 +6,7 @@ module.exports = {
     'productivity, javascript, C, C++, Jasmeet Brar, compiler, web developer, systems developer',
   subtitle: 'Developer. Optimizer. Learner.',
   copyright: '© 2020 | Toronto, Canada',
-  disqusShortname: '',
+  disqusShortname: 'jasmeetbrar',
   postsPerPage: 20,
   googleAnalyticsId: 'UA-36081506-3',
   menu: [
