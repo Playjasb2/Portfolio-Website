@@ -7,7 +7,7 @@ priority: 10
 date: 2020-05-23T1:05:00.000Z
 description: |-
   First Blog Post
-category: blog
+category: life
 tags:
   - blog
 ---
