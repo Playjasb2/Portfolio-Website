@@ -6,7 +6,7 @@ draft: false
 priority: 10
 date: 2020-06-29T00:40:00.000Z
 description: |-
-  In this post, I reflect on my life as an undergrad at University of Toronto.
+  A reflection of my life as an undergrad at University of Toronto.
 category: life
 tags:
   - life
@@ -56,7 +56,7 @@ I took:
 - Computational Complexity and Computability
 - Introduction to Artificial Intelligence
 
-A lot of these courses are hard and stressful. And what I had found is when a course is difficult, it falls into one of two categories:
+A lot of these courses were hard and stressful. And what I had found is when a course is difficult, it falls into one of two categories:
 
 - The course content is difficult to comprehend and requires a lot of time in understanding the actual content or recalling what we had learn before
 - The course content is fair or easy, but the workload is huge; requiring you to spend a lot of time on tasks that one may consider to be tedious
@@ -77,7 +77,7 @@ The last course I took at UofT was a course on Algebraic Cryptography. I wanted 
 
 I have to say, after looking at what I had written so far…I realized it’s not much of a reflection, but rather just a trip down memory lane, and pretty much telling you guys my journey in computer science. 😅
 
-But I will say that my journey had a lot of ups and downs, and the specific path I choose in my academic life wasn’t an easy one. But what made a lot of my journey tolerable were the friends that I made in my journey. They were very supportive tough times, and it was awesome talking about tech with them over our coffee breaks.
+But I will say that my journey had a lot of ups and downs, and the specific path I choose in my academic life wasn’t an easy one. But what made a lot of my journey tolerable were the friends that I made in my journey. They were very supportive in tough times, and it was awesome talking about tech with them over our coffee breaks.
 
 I will definitely miss the times of being at school. I get this feeling of nostalgia of the times where I took an early morning train ride to Toronto, followed by a subway ride to St. George. Then as I would get out of the station, I would encounter the cold winds, followed by the sludgy snow that I would go through to get to Tim Hortons. After ordering coffee at Tim’s, I would sit down and look out of the window, and examine the winter as I take my warm sip of coffee.
 
