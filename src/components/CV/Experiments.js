@@ -11,12 +11,15 @@ const Experiments = ({ experiments, tech }) => (
             <h4 className="mb-0 text-lg">
               <a href={experiment.link}>
                 <span className="inline-block mr-3">{experiment.name}</span>
-                <img
-                  src={`/logos/${experiment.locationIcon}`}
-                  alt=""
-                  height="20"
-                  className="m-2 ml-0"
-                />
+                {
+                  experiment.locationIcon != null &&
+                  <img
+                    src={`/logos/${experiment.locationIcon}`}
+                    alt=""
+                    height="20"
+                    className="m-2 ml-0"
+                  />
+                }
               </a>
               {experiment.sourceCode && (
                 <a href={experiment.sourceCode}>
