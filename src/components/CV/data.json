@@ -222,10 +222,10 @@
             "all": ["Java", "Vue.js"]
           },
           "achievements": [
-            "Assisted the software team in developing a new website for the firm",
-            "Used JIRA to track tasks, and Slack to communicate with other developers in an agile environment",
-            "Used ReactJS with Ant Design Framework and Styled Components to develop the frontend",
-            "Used React Google Maps API to add Google Maps to some pages"
+            "Coordinated with the CEO and the software team on determining the best frameworks to develop a new website in a given timeframe that is extensible and maintainable",
+            "Enhanced the firm’s marketability by modernizing the firm’s website by porting over features from their old site to a new site developed with ReactJS",
+            "Adapted the company’s aesthetics into the site’s design by using Ant Design Framework and Styled Components",
+            "Made the site more informative by adding Google Maps components using the React Google Maps API"
           ]
         }
       ]
@@ -249,10 +249,10 @@
             "all": []
           },
           "achievements": [
-            "Assisted the IT team in automating tasks in Outlook using VBA and VBScript",
+            "Improved the IT team’s productivity by automating daily tasks in Outlook using VBA and VBScript",
             "Coordinated with the systems programmer in generating queries for MS SQL using T-SQL",
-            "Helped others by diagnosing and troubleshooting PC issues related to Windows or hardware",
-            "Used TrackIt in tracking inventory, and generating work orders for the IT team"
+            "Sustained business operations by diagnosing and troubleshooting software or hardware issues that other workers face with their PC",
+            "Reported any new issues in the team’s database and provided procedures on how to resolve those issues"
           ]
         }
       ]
@@ -263,15 +263,8 @@
       "place": "University of Toronto",
       "logo": "University-of-Toronto.png",
       "logoHeight": 40,
-      "period": "September 2017 - December 2017",
-      "description": "I provided notes for CSC324, CSC343, CSC347, CSC369, and CSC373 to the UTM's AccessAbility Resource Centre to aid those in need."
-    },
-    {
-      "place": "University of Toronto",
-      "logo": "University-of-Toronto.png",
-      "logoHeight": 40,
-      "period": "January 2016 - April 2016",
-      "description": "I provided notes for MAT135 and MAT223 to the UTM's AccessAbility Resource Centre to aid those in need."
+      "period": "January 2016 - December 2017",
+      "description": "For two terms, I have been a volunteer notetaker for 7 courses, where I provided notes to UTM's AccessAbility Resource Centre to aid those in need."
     },
     {
       "place": "Frank McKechnie Library",
