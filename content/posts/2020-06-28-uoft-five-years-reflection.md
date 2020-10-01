@@ -3,7 +3,7 @@ template: post
 title: Reflecting on my life at UofT
 slug: /posts/uoft-five-years-reflection
 draft: false
-priority: 10
+priority: 9
 date: 2020-06-29T00:40:00.000Z
 description: |-
   A reflection of my life as an undergrad at University of Toronto.

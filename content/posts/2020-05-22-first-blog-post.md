@@ -3,7 +3,7 @@ template: post
 title: First Blog Post
 slug: /posts/first-blog-post
 draft: false
-priority: 10
+priority:
 date: 2020-05-23T1:05:00.000Z
 description: |-
   First Blog Post
