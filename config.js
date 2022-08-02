@@ -5,7 +5,7 @@ module.exports = {
   keywords:
     "productivity, javascript, C, C++, Jasmeet Brar, compiler, web developer, systems developer",
   subtitle: "Developer. Optimizer. Learner.",
-  copyright: "© 2021 | Toronto, Canada",
+  copyright: "© 2022 | Toronto, Canada",
   disqusShortname: "jasmeetbrar",
   postsPerPage: 20,
   googleAnalyticsId: "UA-36081506-3",

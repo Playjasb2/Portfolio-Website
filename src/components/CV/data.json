@@ -174,7 +174,7 @@
       ]
     },
     "hard": {
-      "featured": ["Python", "Java", "C/C++", "ES6 / ES2017"],
+      "featured": ["Python", "Java", "C", "C++", "C#", "ES6 / ES2017"],
       "other": [
         "HTML 5",
         "CSS 3",
@@ -190,6 +190,7 @@
         "AWS",
         "Laravel",
         "Excel VBA",
+        ".NET",
         "MySQL",
         "Postgres",
         "MongoDB",
@@ -204,6 +205,88 @@
     }
   },
   "experience": [
+    {
+      "company": {
+        "name": "AMD",
+        "logoHeight": 40,
+        "logo": "amd.svg",
+        "period": "April 2022 - Present"
+      },
+      "projects": [
+        {
+          "name": "",
+          "logoHeight": 40,
+          "logo": "",
+          "role": "Software Engineer",
+          "description": "",
+          "stack": {
+            "me": ["C", "C++", "C#", ".NET", "Python"],
+            "all": []
+          },
+          "achievements": ["Windows Platform Kernel Mode Driver (KMD) Team"]
+        }
+      ]
+    },
+    {
+      "company": {
+        "name": "Jarvis Consulting Group",
+        "logoHeight": 40,
+        "logo": "jarvis.png",
+        "period": "March 2021 - April 2022"
+      },
+      "projects": [
+        {
+          "name": "",
+          "logoHeight": 40,
+          "logo": "",
+          "role": "Data Engineer",
+          "description": "",
+          "stack": {
+            "me": [
+              "Python",
+              "Pandas",
+              "Jupyter Notebooks",
+              "Java",
+              "Spring Boot",
+              "Docker",
+              "Hadoop"
+            ],
+            "all": ["Zeppelin", "Hive", "Spark", "Bash"]
+          },
+          "achievements": [
+            "Completed various data projects involving Linux, Bash, Docker, Postgres, Java, Spring Boot, Python, Jupyter Notebooks, Pandas, Zeppelin, Hadoop, Hive, and Spark",
+            "Used Google Cloud Platform to provision a Cloud Compute Instance for development, and setup a Hadoop cluster for a project",
+            "Followed the scrum agile methodology and used Git and Git Flow in every project",
+            "Assisted others in project-related issues, and held daily scrum meetings as a scrum leader"
+          ]
+        }
+      ]
+    },
+    {
+      "company": {
+        "name": "Manulife",
+        "logoHeight": 40,
+        "logo": "manulife.png",
+        "period": "October 2021 - February 2022"
+      },
+      "projects": [
+        {
+          "name": "",
+          "logoHeight": 40,
+          "logo": "",
+          "role": "Data Engineer",
+          "description": "",
+          "stack": {
+            "me": ["Python", "T-SQL", "Spark", "VBA"],
+            "all": []
+          },
+          "achievements": [
+            "Created a data pipeline in Python and T-SQL to track data from ETL and store it in an SCD",
+            "Improved the query execution of their Python library by 4-5x by tapping into backend APIs"
+          ]
+        }
+      ]
+    },
     {
       "company": {
         "name": "Finneo",
@@ -282,5 +365,5 @@
       "degree": "Honours Bachelor of Science Degree with High Distinction, Computer Science Specialist and Math Minor, GPA: 3.63"
     }
   ],
-  "footer": "jasmeetbrar.com © 2021"
+  "footer": "jasmeetbrar.com © 2022"
 }
