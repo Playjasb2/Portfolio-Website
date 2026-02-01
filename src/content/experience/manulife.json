@@ -1,0 +1,10 @@
+{
+  "company": "Manulife",
+  "role": "Data Engineer",
+  "startDate": "2021-10",
+  "endDate": "2022-02",
+  "description": "Designed data-quality pipelines and reporting systems in Python and T-SQL, improving query performance by up to 5× while enabling end-to-end traceability across ETL workflows.",
+  "technologies": ["Python", "T-SQL", "SQL", "ETL"],
+  "logo": "../../assets/logos/manulife.svg",
+  "order": 2
+}

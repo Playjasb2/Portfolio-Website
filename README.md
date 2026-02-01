@@ -1,51 +1,45 @@
-<h1 align="center">
-    Portfolio Website
-</h1>
+# Portfolio Site
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1fadf51f-5dea-4b08-93f7-6fbef7d73219/deploy-status)](https://app.netlify.com/sites/blissful-leavitt-751a3f/deploys)
+A high-performance, accessible, and responsive personal portfolio website built with modern web standards.
 
-This is my portfolio website. It was created using [GatsbyJS](https://www.gatsbyjs.org/).
+## 🚀 Tech Stack
 
-Site: [www.jasmeetbrar.com](https://www.jasmeetbrar.com/)
+- **Framework**: [Astro](https://astro.build) (Zero-JS architecture by default)
+- **UI Library**: [React](https://react.dev) (Used selectively for interactive islands)
+- **Styling**: [TailwindCSS](https://tailwindcss.com) (v4)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Deployment**: [Cloudflare Pages](https://pages.cloudflare.com/)
 
-## 🚀 Quick Start
+## ✨ Key Features
 
-1.  **Clone the repo**
+- **⚡️ Performance First**: Statically generated with minimal client-side JavaScript for optimal load times (Lighthouse 100).
+- **♿️ Accessible**: Semantic HTML, ARIA labels, and keyboard navigation support.
+- **📱 Responsive**: Mobile-first design that scales seamlessly from phone to desktop.
+- **🎨 Dynamic UI**: Smooth scroll animations and interactive elements using Framer Motion.
+- **🧩 Type-Safe Content**: Uses Astro Content Collections for type-safe project and experience data.
 
-    Clone the repo to your desired location.
+## 🛠️ Development
 
-    ```shell
-    # clone the repo
-    git clone https://github.com/Playjasb2/Portfolio-Website.git
-    ```
+All commands are run from the root of the project:
 
-2.  **Install dependencies**
+| Command        | Action                                                 |
+| :------------- | :----------------------------------------------------- |
+| `pnpm install` | Installs dependencies                                  |
+| `pnpm dev`     | Starts local dev server at `localhost:4321`            |
+| `pnpm build`   | Build your production site to `./dist/`                |
+| `pnpm preview` | Preview build locally using Cloudflare Pages emulation |
 
-    Navigate into the site's directory and install the dependencies.
+## 📂 Project Structure
 
-    ```shell
-    cd Portfolio-Website/
-    npm install
-    ```
-
-3.  **Run the website locally**
-
-    With the Gatsby CLI installed, you can run the website locally in development mode.
-
-    ```shell
-    gatsby develop
-    ```
-
-4.  **Open the source code and start editing!**
-
-    The site is now running at `http://localhost:8000`!
-
-    _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying the data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
-
-5.  **Generate optimized build**
-
-    When you're done editing, you can optionally make an optimized build that you can deploy on any server.
-
-    ```shell
-    gatsby build
-    ```
+```text
+/
+├── src/
+│   ├── components/
+│   │   ├── Astro/       # Server-only components (Headers, Footers)
+│   │   ├── React/       # Interactive components (Hero, Projects, Timeline)
+│   ├── content/         # Markdown/JSON data for Projects & Experience
+│   ├── layouts/         # Page layouts
+│   └── pages/           # File-based routing
+├── public/              # Static assets
+└── package.json
+```

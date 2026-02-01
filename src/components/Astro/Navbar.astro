@@ -1,0 +1,192 @@
+---
+const links = [
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Journey", href: "#experience" },
+  { name: "Projects", href: "#projects" },
+  { name: "Contact", href: "#contact" },
+];
+---
+
+<nav
+  class="fixed top-0 w-full z-50 backdrop-blur-md bg-background/70 border-b border-surface"
+>
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="/" class="font-bold text-xl tracking-tight text-gradient"
+      >Jasmeet Brar</a
+    >
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex gap-8">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="text-sm font-medium text-text-muted hover:text-primary transition-colors"
+            >
+              {link.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="menu-btn"
+      class="md:hidden text-text-muted z-50 relative group focus:outline-none"
+      aria-label="Toggle mobile menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <div
+        class="relative flex items-center justify-center rounded-full w-[44px] h-[44px] bg-surface/10 hover:bg-surface/20 border border-white/5 shadow-sm transition-all duration-200 backdrop-blur-sm"
+      >
+        <!-- Menu Icon -->
+        <svg
+          id="icon-menu"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><line x1="4" x2="20" y1="12" y2="12"></line><line
+            x1="4"
+            x2="20"
+            y1="6"
+            y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg
+        >
+
+        <!-- X Icon (Hidden by default) -->
+        <svg
+          id="icon-close"
+          class="hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><line x1="18" x2="6" y1="6" y2="18"></line><line
+            x1="6"
+            x2="18"
+            y1="6"
+            y2="18"></line></svg
+        >
+      </div>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu Overlay (Moved outside nav to avoid clipping/height issues) -->
+<div
+  id="mobile-menu"
+  class="fixed inset-0 bg-background/95 backdrop-blur-xl z-40 translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col items-center justify-center space-y-8"
+>
+  {
+    links.map((link) => (
+      <a
+        href={link.href}
+        class="mobile-link text-3xl font-bold text-text-muted hover:text-primary transition-colors"
+      >
+        {link.name}
+      </a>
+    ))
+  }
+</div>
+
+<script>
+  // Mobile Menu Logic
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileLinks = document.querySelectorAll(".mobile-link");
+  const iconMenu = document.getElementById("icon-menu");
+  const iconClose = document.getElementById("icon-close");
+
+  let isOpen = false;
+
+  function toggleMenu() {
+    isOpen = !isOpen;
+    menuBtn?.setAttribute("aria-expanded", isOpen.toString());
+
+    if (isOpen) {
+      mobileMenu?.classList.remove("translate-x-full");
+      iconMenu?.classList.add("hidden");
+      iconClose?.classList.remove("hidden");
+    } else {
+      mobileMenu?.classList.add("translate-x-full");
+      iconMenu?.classList.remove("hidden");
+      iconClose?.classList.add("hidden");
+    }
+  }
+
+  menuBtn?.addEventListener("click", toggleMenu);
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      isOpen = false;
+      mobileMenu?.classList.add("translate-x-full");
+      iconMenu?.classList.remove("hidden");
+      iconClose?.classList.add("hidden");
+    });
+  });
+
+  // Scroll Spy Logic
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav ul li a");
+
+  // Track all currently intersecting sections
+  const visibleSections = new Map();
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      // Update our map of visible sections
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          visibleSections.set(entry.target.id, entry);
+        } else {
+          visibleSections.delete(entry.target.id);
+        }
+      });
+
+      // Find the "best" section to highlight
+      // Strategy: Choose the one with the highest intersection ratio
+      let bestCandidate = null;
+      let maxRatio = 0;
+
+      for (const [id, entry] of visibleSections) {
+        if (entry.intersectionRatio > maxRatio) {
+          maxRatio = entry.intersectionRatio;
+          bestCandidate = id;
+        }
+      }
+
+      // If we have a candidate, update links
+      if (bestCandidate) {
+        navLinks.forEach((link) => {
+          link.classList.remove("text-primary");
+          link.classList.add("text-text-muted");
+
+          if (link.getAttribute("href") === `#${bestCandidate}`) {
+            link.classList.add("text-primary");
+            link.classList.remove("text-text-muted");
+          }
+        });
+      }
+    },
+    {
+      threshold: [0, 0.25, 0.5, 0.75, 1.0], // More granular thresholds for better ratio detection
+      rootMargin: "-10% 0px -40% 0px", // Focus more on the top/center of screen
+    },
+  );
+
+  sections.forEach((section) => observer.observe(section));
+</script>

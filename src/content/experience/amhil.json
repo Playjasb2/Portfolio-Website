@@ -1,0 +1,10 @@
+{
+  "company": "Amhil North America",
+  "role": "Systems Analyst",
+  "startDate": "2018-05",
+  "endDate": "2018-08",
+  "description": "Automated internal workflows using VBA/VBScript, optimized T-SQL reporting queries, and provided Tier-1 technical support to maintain reliable day-to-day operations.",
+  "technologies": ["VBA", "VBScript", "T-SQL", "Windows"],
+  "logo": "../../assets/logos/amhilnorthamerica.jpg",
+  "order": 4
+}

@@ -1,0 +1,30 @@
+{
+  "company": "AMD Inc.",
+  "logo": "../../assets/logos/amd.svg",
+  "order": 1,
+  "positions": [
+    {
+      "role": "Senior Software Engineer",
+      "startDate": "2024-06",
+      "endDate": "Present",
+      "description": "Lead architecture and automation initiatives across internal platforms and developer tooling. Contributed to performance-critical and kernel-mode debugging in C/C++ across AMD Ryzen and APU platforms.",
+      "technologies": [
+        "TypeScript",
+        "Next.js",
+        "NestJS",
+        "Nx",
+        "Docker",
+        "GitHub Actions",
+        "C",
+        "C++"
+      ]
+    },
+    {
+      "role": "Software Engineer",
+      "startDate": "2022-04",
+      "endDate": "2024-06",
+      "description": "Built product and platform components across frontend, backend, and low-level tooling. Debugged kernel-mode issues in C/C++ and developed automation workflows adopted across teams.",
+      "technologies": ["C", "C++", "C#", "TypeScript", "Linux", "GitHub Actions"]
+    }
+  ]
+}

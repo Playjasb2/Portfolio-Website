@@ -1,0 +1,10 @@
+{
+  "company": "Finneo",
+  "role": "Software Developer",
+  "startDate": "2019-06",
+  "endDate": "2019-08",
+  "description": "Built core features for a green-field real-estate web portal using React, delivering interactive data visualizations and map-based property insights while collaborating directly with leadership in an agile team.",
+  "technologies": ["React", "JavaScript", "Chart.js", "Google Maps API", "HTML", "CSS"],
+  "logo": "../../assets/logos/finneo.jpg",
+  "order": 3
+}

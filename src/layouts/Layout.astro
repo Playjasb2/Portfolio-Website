@@ -1,0 +1,98 @@
+---
+import "../styles/global.css";
+import "../styles/global.css";
+import "@fontsource/outfit/400.css";
+import "@fontsource/outfit/500.css";
+import "@fontsource/outfit/600.css";
+import "@fontsource/outfit/700.css";
+import { ClientRouter } from "astro:transitions";
+import FontPreloader from "../components/Astro/FontPreloader.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+  keywords?: string;
+}
+
+const {
+  title,
+  description = "Jasmeet Brar - Full Stack Engineer specializing in React, TypeScript, Next.js, and Node.js. Building modern, scalable web applications.",
+  keywords = "Jasmeet Brar, Full Stack Engineer, Full Stack Developer, Software Engineer, Frontend Developer, Backend Developer, React Developer, TypeScript, Next.js, Node.js, JavaScript, Web Developer, Software Developer, React, AWS, PostgreSQL, TailwindCSS, C, C++, C#, Rust, Python, Java",
+} = Astro.props;
+
+const siteUrl = Astro.site ? Astro.site.href : "https://www.jasmeetbrar.com";
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Jasmeet Brar",
+  jobTitle: "Senior Software Engineer",
+  url: siteUrl,
+  image: new URL("/og.png", siteUrl).href,
+  sameAs: [
+    "https://github.com/Playjasb2",
+    "https://linkedin.com/in/jasmeetbrar",
+  ],
+  knowsAbout: [
+    "React",
+    "TypeScript",
+    "JavaScript",
+    "Next.js",
+    "Node.js",
+    "PostgreSQL",
+    "AWS",
+    "TailwindCSS",
+    "C",
+    "C++",
+    "C#",
+    "Rust",
+    "Python",
+    "Java",
+    "Full Stack Development",
+    "Frontend Development",
+    "Web Development",
+    "System Design",
+    "Scalable Architecture",
+  ],
+  alumniOf: {
+    "@type": "Organization",
+    name: "University of Toronto",
+  },
+};
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="keywords" content={keywords} />
+    <meta name="theme-color" content="#09090b" />
+    <meta name="author" content="Jasmeet Brar" />
+    <meta name="robots" content="index, follow" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="canonical" href={Astro.url} />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <!-- Fonts: Outfit (Local & Preloaded) -->
+    <FontPreloader />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL("/og.png", Astro.url)} />
+
+    <title>{title}</title>
+    <ClientRouter />
+  </head>
+  <body
+    class="bg-background text-text selection:bg-primary/30 min-h-screen flex flex-col antialiased"
+  >
+    <slot />
+  </body>
+</html>

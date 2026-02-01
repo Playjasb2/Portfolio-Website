@@ -1,0 +1,99 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Astro/Navbar.astro";
+import Footer from "../components/Astro/Footer.astro";
+import { getImage } from "astro:assets";
+import Hero from "../components/React/Hero";
+import profileImageSrc from "../assets/profile_image.png";
+import TechMarquee from "../components/React/TechMarquee";
+import About from "../components/React/About";
+import Journey from "../components/timeline/Journey";
+import Projects from "../components/React/Projects";
+import Contact from "../components/React/Contact";
+
+// Fetch Data
+const experience = await getCollection("experience");
+const projects = await getCollection("projects");
+
+// Sort Data
+const sortedExperience = experience.sort((a, b) => a.data.order - b.data.order);
+const sortedProjects = projects.sort((a, b) => {
+  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
+});
+
+// Load all logos eagerly
+const logoFiles = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/logos/*",
+  {
+    eager: true,
+  },
+);
+
+// Helper to resolve logo path to image object
+function resolveLogo(path: string) {
+  // Normalize path: JSON has "../../assets/logos/..." -> we need key "../assets/logos/..."
+  // Or simply match by filename
+  const filename = path.split("/").pop();
+  const foundKey = Object.keys(logoFiles).find((k) => k.endsWith(filename!));
+  return foundKey ? logoFiles[foundKey].default : null;
+}
+
+// Extract data for props
+const experienceItems = await Promise.all(
+  sortedExperience.map(async (item) => {
+    if (item.data.logo) {
+      const logoImg = resolveLogo(item.data.logo);
+      if (logoImg) {
+        const optimizedLogo = await getImage({
+          src: logoImg,
+          format: "webp",
+          width: 100,
+          height: 100,
+        });
+        return {
+          ...item.data,
+          logo: optimizedLogo.src,
+        };
+      }
+    }
+    return {
+      ...item.data,
+      logo: undefined,
+    };
+  }),
+);
+const projectItems = sortedProjects.map((item) => item.data);
+
+// Optimize Hero Image
+const profileImage = await getImage({
+  src: profileImageSrc,
+  format: "webp",
+  width: 600,
+  height: 600,
+});
+---
+
+<Layout title="Jasmeet Brar | Full Stack Engineer">
+  <Navbar />
+
+  <main class="min-h-screen">
+    <div class="max-w-6xl mx-auto px-6 pt-32 mb-20">
+      <Hero profileImage={profileImage.src} />
+    </div>
+
+    <TechMarquee client:visible />
+
+    <About client:visible />
+
+    <div class="bg-surface/30 border-y border-white/5">
+      <Journey items={experienceItems} client:visible />
+    </div>
+
+    <Projects projects={projectItems} client:visible />
+
+    <Contact client:visible />
+  </main>
+
+  <Footer />
+</Layout>

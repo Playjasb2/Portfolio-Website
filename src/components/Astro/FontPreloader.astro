@@ -1,0 +1,16 @@
+---
+/* 
+  Vite Helper: ?url allows us to resolve the exact asset path from the library.
+  We preload these specific font files to ensure they load in parallel with CSS,
+  preventing the "request chain" delay and maintaining our perfect Lighthouse score.
+*/
+import outfit400 from "@fontsource/outfit/files/outfit-latin-400-normal.woff2?url";
+import outfit500 from "@fontsource/outfit/files/outfit-latin-500-normal.woff2?url";
+import outfit600 from "@fontsource/outfit/files/outfit-latin-600-normal.woff2?url";
+import outfit700 from "@fontsource/outfit/files/outfit-latin-700-normal.woff2?url";
+---
+
+<link rel="preload" href={outfit400} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={outfit500} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={outfit600} as="font" type="font/woff2" crossorigin />
+<link rel="preload" href={outfit700} as="font" type="font/woff2" crossorigin />
