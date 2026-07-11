@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-import "../styles/global.css";
 import "@fontsource/outfit/400.css";
 import "@fontsource/outfit/500.css";
 import "@fontsource/outfit/600.css";
@@ -11,52 +10,90 @@ import FontPreloader from "../components/Astro/FontPreloader.astro";
 interface Props {
   title: string;
   description?: string;
-  keywords?: string;
+  noindex?: boolean;
+  profileImage?: string;
 }
 
 const {
   title,
-  description = "Jasmeet Brar - Full Stack Engineer specializing in React, TypeScript, Next.js, and Node.js. Building modern, scalable web applications.",
-  keywords = "Jasmeet Brar, Full Stack Engineer, Full Stack Developer, Software Engineer, Frontend Developer, Backend Developer, React Developer, TypeScript, Next.js, Node.js, JavaScript, Web Developer, Software Developer, React, AWS, PostgreSQL, TailwindCSS, C, C++, C#, Rust, Python, Java",
+  description = "Jasmeet Brar is a Senior Software Engineer focused on clean architecture, developer tooling, performance, and maintainable systems.",
+  noindex = false,
+  profileImage,
 } = Astro.props;
 
-const siteUrl = Astro.site ? Astro.site.href : "https://www.jasmeetbrar.com";
+const siteUrl = new URL(Astro.site?.href ?? "https://www.jasmeetbrar.com");
+const homeUrl = new URL("/", siteUrl).href;
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const socialImageUrl = new URL("/og.png", siteUrl).href;
+const profileImageUrl = profileImage ? new URL(profileImage, siteUrl).href : undefined;
+const personId = `${homeUrl}#person`;
+const websiteId = `${homeUrl}#website`;
+const profilePageId = `${homeUrl}#profile-page`;
+
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Jasmeet Brar",
-  jobTitle: "Senior Software Engineer",
-  url: siteUrl,
-  image: new URL("/og.png", siteUrl).href,
-  sameAs: [
-    "https://github.com/Playjasb2",
-    "https://linkedin.com/in/jasmeetbrar",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      url: homeUrl,
+      name: "Jasmeet Brar",
+      description,
+      inLanguage: "en-CA",
+      creator: { "@id": personId },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": profilePageId,
+      url: homeUrl,
+      name: "Jasmeet Brar | Senior Software Engineer",
+      description,
+      inLanguage: "en-CA",
+      isPartOf: { "@id": websiteId },
+      mainEntity: { "@id": personId },
+      ...(profileImageUrl && {
+        primaryImageOfPage: {
+          "@type": "ImageObject",
+          url: profileImageUrl,
+          contentUrl: profileImageUrl,
+          caption: "Jasmeet Brar",
+        },
+      }),
+    },
+    {
+      "@type": "Person",
+      "@id": personId,
+      name: "Jasmeet Brar",
+      url: homeUrl,
+      jobTitle: "Senior Software Engineer",
+      description,
+      mainEntityOfPage: { "@id": profilePageId },
+      ...(profileImageUrl && {
+        image: {
+          "@type": "ImageObject",
+          url: profileImageUrl,
+          contentUrl: profileImageUrl,
+          caption: "Jasmeet Brar",
+        },
+      }),
+      worksFor: {
+        "@type": "Organization",
+        name: "AMD Inc.",
+      },
+      sameAs: [
+        "https://github.com/Playjasb2",
+        "https://www.linkedin.com/in/jasmeetbrar/",
+        "https://stackoverflow.com/users/6206683/jasmeet-brar",
+      ],
+      knowsAbout: [
+        "Clean architecture",
+        "Systems design",
+        "Developer tooling",
+        "Performance",
+        "Automation",
+      ],
+    },
   ],
-  knowsAbout: [
-    "React",
-    "TypeScript",
-    "JavaScript",
-    "Next.js",
-    "Node.js",
-    "PostgreSQL",
-    "AWS",
-    "TailwindCSS",
-    "C",
-    "C++",
-    "C#",
-    "Rust",
-    "Python",
-    "Java",
-    "Full Stack Development",
-    "Frontend Development",
-    "Web Development",
-    "System Design",
-    "Scalable Architecture",
-  ],
-  alumniOf: {
-    "@type": "Organization",
-    name: "University of Toronto",
-  },
 };
 ---
 
@@ -65,33 +102,43 @@ const jsonLd = {
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
     <meta name="theme-color" content="#09090b" />
     <meta name="author" content="Jasmeet Brar" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={noindex ? "noindex, follow" : "index, follow"} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="canonical" href={Astro.url} />
+    {!noindex && <link rel="canonical" href={canonicalUrl} />}
     <meta name="generator" content={Astro.generator} />
 
     <!-- Structured Data -->
-    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    {!noindex && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 
     <!-- Fonts: Outfit (Local & Preloaded) -->
     <FontPreloader />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:site_name" content="Jasmeet Brar" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={new URL("/og.png", Astro.url)} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Jasmeet Brar, Senior Software Engineer" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
+    <meta name="twitter:image:alt" content="Jasmeet Brar, Senior Software Engineer" />
 
     <title>{title}</title>
     <ClientRouter />
   </head>
   <body
-    class="bg-background text-text selection:bg-primary/30 min-h-screen flex flex-col antialiased"
+    class="bg-background text-text selection:bg-primary/30 min-h-screen flex flex-col overflow-x-clip antialiased"
   >
     <slot />
   </body>

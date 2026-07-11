@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 
 interface ProjectItem {
@@ -13,33 +12,20 @@ interface ProjectItem {
 export default function Projects({ projects }: { projects: ProjectItem[] }) {
   return (
     <section className="py-12 px-6 max-w-6xl mx-auto scroll-mt-16" id="projects">
-      <motion.h2
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        className="text-3xl font-bold mb-16 pl-4 border-l-4 border-purple-500"
-      >
-        Selected Work
-      </motion.h2>
+      <h2 className="text-3xl font-bold mb-16 pl-4 border-l-4 border-purple-500">Selected Work</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} index={index} />
+        {projects.map((project) => (
+          <ProjectCard key={project.title} project={project} />
         ))}
       </div>
     </section>
   );
 }
 
-function ProjectCard({ project, index }: { project: ProjectItem; index: number }) {
+function ProjectCard({ project }: { project: ProjectItem }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
-      className="group relative rounded-2xl bg-surface/40 border border-white/5 overflow-hidden hover:bg-surface/60 transition-colors flex flex-col h-full"
-    >
+    <article className="group relative rounded-2xl bg-surface/40 border border-white/5 overflow-hidden hover:bg-surface/60 transition-colors flex flex-col h-full">
       <div className="p-8 flex-1 flex flex-col">
         <div className="flex justify-between items-start mb-4">
           <div className="p-3 rounded-xl bg-purple-500/10 text-purple-400 group-hover:scale-110 transition-transform">
@@ -94,6 +80,6 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
           ))}
         </div>
       </div>
-    </motion.div>
+    </article>
   );
 }

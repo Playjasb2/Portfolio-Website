@@ -74,7 +74,7 @@ const profileImage = await getImage({
 });
 ---
 
-<Layout title="Jasmeet Brar | Full Stack Engineer">
+<Layout title="Jasmeet Brar | Senior Software Engineer" profileImage={profileImage.src}>
   <Navbar />
 
   <main class="min-h-screen">
@@ -84,13 +84,13 @@ const profileImage = await getImage({
 
     <TechMarquee client:visible />
 
-    <About client:visible />
+    <About />
 
     <div class="bg-surface/30 border-y border-white/5">
       <Journey items={experienceItems} client:visible />
     </div>
 
-    <Projects projects={projectItems} client:visible />
+    <Projects projects={projectItems} />
 
     <Contact client:visible />
   </main>

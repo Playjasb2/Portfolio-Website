@@ -31,14 +31,7 @@ export default function Journey({ items }: { items: ExperienceItem[] }) {
       className="py-12 max-w-6xl mx-auto px-6 relative scroll-mt-16"
       ref={containerRef}
     >
-      <motion.h2
-        initial={{ opacity: 0, x: -20 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        className="text-3xl font-bold mb-16 pl-4 border-l-4 border-blue-500"
-      >
-        The Journey
-      </motion.h2>
+      <h2 className="text-3xl font-bold mb-16 pl-4 border-l-4 border-blue-500">The Journey</h2>
 
       <div className="relative">
         {/* Animated Line */}
@@ -64,11 +57,7 @@ function TimelineNode({ item, index }: { item: ExperienceItem; index: number }) 
   const positions = item.positions || [];
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.5, delay: 0.2 }}
+    <div
       className={`relative flex items-center justify-between md:justify-normal gap-8 ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
     >
       {/* Dot on the line */}
@@ -148,6 +137,6 @@ function TimelineNode({ item, index }: { item: ExperienceItem; index: number }) 
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

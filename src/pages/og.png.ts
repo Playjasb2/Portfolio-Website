@@ -67,7 +67,7 @@ export const GET: APIRoute = async () => {
               {
                 type: "div",
                 props: {
-                  children: "Full Stack Engineer",
+                  children: "Senior Software Engineer",
                   style: {
                     fontSize: 30,
                     color: "#a1a1aa", // zinc-400

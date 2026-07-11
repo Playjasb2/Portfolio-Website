@@ -133,6 +133,7 @@ const links = [
   mobileLinks.forEach((link) => {
     link.addEventListener("click", () => {
       isOpen = false;
+      menuBtn?.setAttribute("aria-expanded", "false");
       mobileMenu?.classList.add("translate-x-full");
       iconMenu?.classList.remove("hidden");
       iconClose?.classList.add("hidden");
