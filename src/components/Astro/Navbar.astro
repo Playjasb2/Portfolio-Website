@@ -1,10 +1,13 @@
 ---
+import { ExternalLink } from "lucide-react";
+
 const links = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Journey", href: "#experience" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
+  { name: "Atlas", href: "https://atlas.jasmeetbrar.com/", external: true },
 ];
 ---
 
@@ -23,9 +26,17 @@ const links = [
           <li>
             <a
               href={link.href}
-              class="text-sm font-medium text-text-muted hover:text-primary transition-colors"
+              target={link.external ? "_blank" : undefined}
+              rel={link.external ? "noopener noreferrer" : undefined}
+              class="inline-flex items-center gap-1.5 text-sm font-medium text-text-muted hover:text-primary transition-colors"
             >
               {link.name}
+              {link.external && (
+                <>
+                  <ExternalLink size={14} strokeWidth={1.75} aria-hidden="true" className="shrink-0" />
+                  <span class="sr-only"> (opens in a new tab)</span>
+                </>
+              )}
             </a>
           </li>
         ))
@@ -95,9 +106,17 @@ const links = [
     links.map((link) => (
       <a
         href={link.href}
-        class="mobile-link text-3xl font-bold text-text-muted hover:text-primary transition-colors"
+        target={link.external ? "_blank" : undefined}
+        rel={link.external ? "noopener noreferrer" : undefined}
+        class="mobile-link inline-flex items-center gap-2.5 text-3xl font-bold text-text-muted hover:text-primary transition-colors"
       >
         {link.name}
+        {link.external && (
+          <>
+            <ExternalLink size={20} strokeWidth={1.75} aria-hidden="true" className="shrink-0" />
+            <span class="sr-only"> (opens in a new tab)</span>
+          </>
+        )}
       </a>
     ))
   }
@@ -142,7 +161,7 @@ const links = [
 
   // Scroll Spy Logic
   const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll("nav ul li a");
+  const navLinks = document.querySelectorAll('nav ul li a[href^="#"]');
 
   // Track all currently intersecting sections
   const visibleSections = new Map();
